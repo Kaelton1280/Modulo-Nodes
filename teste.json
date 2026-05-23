@@ -1,0 +1,16 @@
+
+{
+    "name": "Kaelton dias",
+    "age": "26",
+    "email": "x3Tt7@example.com",
+    "hobby": [ "programar", "jogar", "ler", "academia"],
+    "address": {
+        "rua": "cidade de deus",
+        "bairro": "rio verde",
+        "cidade": "Balsas",
+        "Estado": "MA",
+        "number": 543
+      
+    }
+    
+}
