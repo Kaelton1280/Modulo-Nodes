@@ -15,10 +15,11 @@ import express from 'express'
 
 import express from 'express'; // importa o express, que é um framework para criar servidores web em Node.js, desse jeito importa o express por completo, quando nao coloca os bigodinhos, ele importa tudo, ou seja, o express inteiro, e ai voce pode usar as funcoes do express, como app.get, app.post, etc.
 import { PrismaClient } from "./generated/prisma/client.js" // importa o prisma client, ecoloca os bigodinhos traz so o que eu quero, nesse caso o client.js que tem as funcoes para acessar o banco de dados
+import cors from 'cors' // importa o cors, que é um middleware para permitir que o frontend acesse o backend, sem o cors, o frontend nao consegue acessar o backend, porque eles estao em dominios diferentes, ou seja, o frontend esta rodando em localhost:3000 e o backend esta rodando em localhost:3001, entao o cors permite que o frontend acesse o backend
 const prisma = new PrismaClient() // instancia do prisma client
 const app = express();
 app.use(express.json()); // serve para transformar o corpo da requisicao em json
-
+app.use(cors()) // serve para usar o cors, ou seja, para permitir que o frontend acesse o backend, sem o cors, o frontend nao consegue acessar o backend, porque eles estao em dominios diferentes, ou seja, o frontend esta rodando em localhost:3000 e o backend esta rodando em localhost:3001, entao o cors permite que o frontend acesse o backend
 
 
 app.get('/usuarios', async (req, res) => {  // metodo GET
